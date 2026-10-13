@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Smart Wave Solar Meta Review</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#EEF1F4; --surface:#FFFFFF; --ink:#15212F; --muted:#586577; --line:#D9DFE6; --soft:#F4F6F8;
+  --ut:#1F3A5F; --co:#D46E33; --before:#9AA5B1; --sun:#E3A13A;
+  --good:#2E7A4D; --bad:#B3432E; --good-bg:#E5F2EA; --bad-bg:#F8E7E3; --sun-bg:#FBF0DC;
+  --display:"Archivo","Arial Narrow",Arial,sans-serif;
+  --body:"Source Sans 3","Segoe UI",Helvetica,Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --radius:14px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E141C; --surface:#151E29; --ink:#E7ECF2; --muted:#9AA6B5; --line:#26313E; --soft:#1B2633;
+  --ut:#86ACDA; --co:#F0935C; --before:#6C7886; --sun:#F0B95A;
+  --good:#5CC48B; --bad:#EE7F68; --good-bg:#16302A; --bad-bg:#3A201D; --sun-bg:#33291A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E141C; --surface:#151E29; --ink:#E7ECF2; --muted:#9AA6B5; --line:#26313E; --soft:#1B2633;
+  --ut:#86ACDA; --co:#F0935C; --before:#6C7886; --sun:#F0B95A;
+  --good:#5CC48B; --bad:#EE7F68; --good-bg:#16302A; --bad-bg:#3A201D; --sun-bg:#33291A; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.deck{max-width:1180px;margin:0 auto;padding-inline:20px;padding-block:28px 64px;display:grid;gap:28px}
+.slide{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(22px,4vw,52px);display:grid;gap:26px;min-width:0}
+.slide-head{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-bottom:14px;border-bottom:1px solid var(--line)}
+.slide-no{white-space:nowrap}
+h1,h2,h3{font-family:var(--display);font-stretch:112%;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h1{font-size:clamp(34px,5.4vw,64px);line-height:1.02;font-weight:800}
+h2{font-size:clamp(26px,3.4vw,40px);line-height:1.08;font-weight:750}
+h3{font-size:19px;font-weight:700;font-stretch:105%}
+p{margin:0;max-width:68ch}
+.lede{font-size:clamp(18px,1.6vw,21px);color:var(--muted);max-width:62ch}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.num{font-variant-numeric:tabular-nums}
+.mono{font-family:var(--mono)}
+.muted{color:var(--muted)}
+.ut{color:var(--ut)} .co{color:var(--co)}
+.up{color:var(--good)} .down{color:var(--bad)}
+
+/* cover */
+.cover{background:var(--surface);position:relative;overflow:hidden}
+.cover .sunline{height:6px;border-radius:3px;background:linear-gradient(90deg,var(--ut) 0 50%,var(--co) 50% 100%);width:180px}
+.cover-meta{display:flex;flex-wrap:wrap;gap:8px 28px;font-size:15px;color:var(--muted)}
+.cover-meta b{color:var(--ink);font-weight:600}
+
+/* stat strip */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.stat{padding:20px 22px;display:grid;gap:6px;border-left:1px solid var(--line);min-width:0}
+.stat:first-child{border-left:0}
+.stat .k{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.stat .v{font-family:var(--display);font-stretch:108%;font-weight:750;font-size:clamp(28px,3.4vw,42px);line-height:1;font-variant-numeric:tabular-nums}
+.stat .d{font-size:14px;color:var(--muted)}
+.chip{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:500;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.chip.g{background:var(--good-bg);color:var(--good)} .chip.r{background:var(--bad-bg);color:var(--bad)} .chip.s{background:var(--sun-bg);color:var(--ink)}
+
+/* two and three column */
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.cols>*,.cols3>*{min-width:0}
+.panel{border:1px solid var(--line);border-radius:12px;padding:20px 22px;display:grid;gap:12px;align-content:start}
+.panel.flat{background:var(--soft);border-color:transparent}
+.key{display:grid;gap:14px}
+.key li{list-style:none;display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start}
+.key{padding:0;margin:0}
+.key .n{font-family:var(--mono);font-size:13px;color:var(--muted);padding-top:3px}
+
+/* tables */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;font-size:15.5px}
+th,td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500;background:var(--soft);white-space:nowrap}
+tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right;white-space:nowrap}
+tbody th{font-weight:600}
+tbody th small{display:block;font-weight:400;color:var(--muted);font-size:13.5px}
+tr.strong td,tr.strong th{font-weight:700}
+tr.dead td,tr.dead th{color:var(--muted)}
+.note{color:var(--muted);font-size:14.5px;min-width:200px}
+
+/* bars */
+.bars{display:grid;gap:18px}
+.bar-group{display:grid;gap:8px}
+.bar-row{display:grid;grid-template-columns:96px 1fr 84px;gap:12px;align-items:center;font-size:15px}
+.bar-row .lbl{color:var(--muted)}
+.bar-track{position:relative;height:14px;background:var(--soft);border-radius:4px}
+.bar{position:absolute;inset:0 auto 0 0;width:var(--w);border-radius:4px;background:var(--ut)}
+.bar.before{background:var(--before)} .bar.co{background:var(--co)} .bar.sun{background:var(--sun)}
+.tick{position:absolute;top:-5px;bottom:-5px;left:var(--x);width:0;border-left:2px dashed var(--ink);opacity:.55}
+.bar-legend{display:flex;gap:18px;flex-wrap:wrap;font-size:13.5px;color:var(--muted)}
+.sw{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.cplcell{min-width:170px}
+.cplcell .num{display:block;font-weight:600;margin-bottom:6px}
+.cplcell .bar-track{height:8px}
+.cplcell .tick{top:-4px;bottom:-4px}
+
+/* day columns */
+.days{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:end;height:280px;padding-top:24px;position:relative}
+.day{display:grid;grid-template-rows:auto 1fr auto;height:100%;gap:8px;text-align:center;min-width:0}
+.day .col-wrap{position:relative;display:flex;align-items:flex-end;justify-content:center;background:var(--soft);border-radius:8px}
+.day .col-wrap::after{content:"";position:absolute;left:0;right:0;bottom:75%;border-top:2px dashed var(--ink);opacity:.45}
+.day .col{width:56%;height:var(--w);background:var(--ut);border-radius:6px 6px 0 0}
+.day .col.peak{background:var(--before)}
+.day .col.best{background:var(--good)}
+.day .v{font-family:var(--display);font-weight:750;font-size:26px;font-variant-numeric:tabular-nums}
+.day .l{font-size:14px;color:var(--muted)}
+
+/* actions */
+.actions{display:grid;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.act{display:grid;grid-template-columns:150px 1fr 220px;gap:20px;padding:18px 22px;border-top:1px solid var(--line);align-items:start}
+.act:first-child{border-top:0}
+.act .tag{font-family:var(--mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.act h3{margin-bottom:4px}
+.act p{color:var(--muted);font-size:15.5px}
+.act .why{font-size:14.5px;border-left:3px solid var(--sun);padding-left:12px;color:var(--ink)}
+.callout{background:var(--sun-bg);border-radius:12px;padding:18px 22px;display:grid;gap:6px}
+.callout p{max-width:none}
+
+/* rules */
+.rules{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.rule{border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:grid;gap:6px;min-width:0}
+.rule .when{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+.rule b{font-family:var(--display);font-stretch:105%;font-size:17px}
+
+.asks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;padding:0;margin:0}
+.asks li{list-style:none;border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:grid;gap:4px;min-width:0}
+.asks li span{color:var(--muted);font-size:15px}
+.who{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+
+.foot{font-size:14px;color:var(--muted);display:grid;gap:8px}
+.foot p{max-width:none}
+
+a{color:inherit}
+:focus-visible{outline:2px solid var(--sun);outline-offset:3px}
+
+@media (max-width:900px){
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stat:nth-child(3){border-left:0}
+  .stat:nth-child(n+3){border-top:1px solid var(--line)}
+  .cols,.cols3,.rules,.asks{grid-template-columns:1fr}
+  .act{grid-template-columns:1fr;gap:8px}
+  }
+@media (max-width:520px){
+  body{font-size:16px}
+  .deck{padding-inline:16px}
+  .bar-row{grid-template-columns:72px 1fr 70px;gap:8px}
+  .days{height:240px;gap:10px}
+  .day .v{font-size:21px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .bar,.day .col{transition:width .6s ease,height .6s ease}
+}
+</style>
+</head>
+<body>
+<main class="deck">
+
+<!-- 1 COVER -->
+<section class="slide cover" id="cover" aria-label="Cover">
+  <div class="slide-head"><span>Smart Wave Solar &middot; Meta performance review</span><span class="slide-no">Cover &middot; 01 / 13</span></div>
+  <div class="sunline" aria-hidden="true"></div>
+  <p class="eyebrow">$7,995 solar offer &middot; Utah and Colorado &middot; Meta ads</p>
+  <h1>Four days in, Utah leads cost 28% less than before. Colorado is next.</h1>
+  <p class="lede">Results from launch on Friday 9 October to Monday 12 October 2026, measured against the previous 30 days in the DealAdvisor account, and the plan for scaling from here.</p>
+  <div class="stats">
+    <div class="stat"><span class="k">Leads</span><span class="v num">44</span><span class="d">Utah 29 &middot; Colorado 15</span></div>
+    <div class="stat"><span class="k">Cost per lead</span><span class="v num">$73.45</span><span class="d"><span class="chip g">&minus;10.1%</span> vs $81.66 before</span></div>
+    <div class="stat"><span class="k">Leads per day</span><span class="v num">11.0</span><span class="d"><span class="chip g">+18.3%</span> vs 9.3 before</span></div>
+    <div class="stat"><span class="k">Spend</span><span class="v num">$3,231.57</span><span class="d">$807.89 a day</span></div>
+  </div>
+  <div class="cover-meta">
+    <span>Prepared for <b>Rich and Ryan</b></span>
+    <span>By <b>Charles Piper, Heath Media</b></span>
+    <span>13 October 2026</span>
+  </div>
+</section>
+
+<!-- 2 SUMMARY -->
+<section class="slide" id="summary" aria-labelledby="t-summary">
+  <div class="slide-head"><span>Smart Wave Solar &middot; Meta performance review</span><span class="slide-no">Summary &middot; 02 / 13</span></div>
+  <h2 id="t-summary">What the first four days tell us</h2>
+  <div class="cols">
+    <div class="panel flat">
+      <p class="eyebrow">Working</p>
+      <ul class="key">
+        <li><span class="n">UT</span><span><b>Utah cost per lead is $69.55</b>, down from $96.11, with 42% more leads a day.</span></li>
+        <li><span class="n">QL</span><span><b>Every form lead says they own a single-family home</b>, and 12 of 14 have bills of $100 or more.</span></li>
+        <li><span class="n">CR</span><span><b>The homeowner qualifier ad wins.</b> A3 Qualifier brings leads at $35.86 and drew 23% of all leads from 11% of spend.</span></li>
+        <li><span class="n">MO</span><span><b>Monday was the best day yet</b>: 17 leads at $51.77, including Colorado at $43.65.</span></li>
+      </ul>
+    </div>
+    <div class="panel flat">
+      <p class="eyebrow">Fixing this week</p>
+      <ul class="key">
+        <li><span class="n">CO</span><span><b>Colorado is at $80.97</b>, up from $64.11. Clicks cost 64% more and Meta has sent almost every click to the instant form, so the Colorado page has barely been tested.</span></li>
+        <li><span class="n">VD</span><span><b>Videos don't produce form leads.</b> $418.41 on forms brought none, while on the website they convert at $51.72.</span></li>
+        <li><span class="n">A4</span><span><b>"Not a Typo" takes 36% of spend</b> and is fading on Utah forms ($196.74 for one lead).</span></li>
+        <li><span class="n">ZP</span><span><b>Two form leads came from out of state</b> because Meta pre-filled their zip code.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 3 BENCHMARK -->
+<section class="slide" id="benchmark" aria-labelledby="t-bench">
+  <div class="slide-head"><span>Smart Wave Solar &middot; Meta performance review</span><span class="slide-no">Benchmark &middot; 03 / 13</span></div>
+  <div style="display:grid;gap:10px">
+    <h2 id="t-bench">Before vs since launch</h2>
+    <p class="lede">The periods differ in length (30 days vs 4), so volume is compared per day and everything else as a rate.</p>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Metric</th><th class="num">UT before</th><th class="num">UT now</th><th class="num">Change</th><th class="num">CO before</th><th class="num">CO now</th><th class="num">Change</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Spend per day</th><td class="num">$490.18</td><td class="num">$504.25</td><td class="num">+2.9%</td><td class="num">$269.27</td><td class="num">$303.64</td><td class="num">+12.8%</td></tr>
+        <tr><th scope="row">Leads per day</th><td class="num">5.1</td><td class="num">7.3</td><td class="num up">+42.2%</td><td class="num">4.2</td><td class="num">3.8</td><td class="num down">&minus;10.7%</td></tr>
+        <tr class="strong"><th scope="row">Cost per lead</th><td class="num">$96.11</td><td class="num">$69.55</td><td class="num up">&minus;27.6%</td><td class="num">$64.11</td><td class="num">$80.97</td><td class="num down">+26.3%</td></tr>
+        <tr><th scope="row">CPC (link)</th><td class="num">$4.76</td><td class="num">$5.45</td><td class="num down">+14.5%</td><td class="num">$4.24</td><td class="num">$6.94</td><td class="num down">+63.8%</td></tr>
+        <tr><th scope="row">CTR (link)</th><td class="num">0.71%</td><td class="num">0.75%</td><td class="num up">+5.3%</td><td class="num">0.98%</td><td class="num">0.74%</td><td class="num down">&minus;24.4%</td></tr>
+        <tr><th scope="row">CPM</th><td class="num">$33.76</td><td class="num">$40.69</td><td class="num down">+20.5%</td><td class="num">$41.35</td><td class="num">$51.19</td><td class="num down">+23.8%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="cols">
+    <div class="bars" role="img" aria-label="Cost per lead before and since launch. Utah 96.11 to 69.55 dollars. Colorado 64.11 to 80.97 dollars. Target 90 dollars.">
+      <div class="bar-group">
+        <span class="eyebrow ut">Utah cost per lead</span>
+        <div class="bar-row"><span class="lbl">Before</span><div class="bar-track"><div class="bar before" style="--w:80.1%"></div><div class="tick" style="--x:75.0%"></div></div><span class="num">$96.11</span></div>
+        <div class="bar-row"><span class="lbl">Since launch</span><div class="bar-track"><div class="bar" style="--w:58.0%"></div><div class="tick" style="--x:75.0%"></div></div><span class="num"><b>$69.55</b></span></div>
+      </div>
+      <div class="bar-group">
+        <span class="eyebrow co">Colorado cost per lead</span>
+        <div class="bar-row"><span class="lbl">Before</span><div class="bar-track"><div class="bar before" style="--w:53.4%"></div><div class="tick" style="--x:75.0%"></div></div><span class="num">$64.11</span></div>
+        <div class="bar-row"><span class="lbl">Since launch</span><div class="bar-track"><div class="bar co" style="--w:67.5%"></div><div class="tick" style="--x:75.0%"></div></div><span class="num"><b>$80.97</b></span></div>
+      </div>
+      <div class="bar-legend"><span><i class="sw" style="background:var(--before)"></i>Before (DealAdvisor)</span><span><i class="sw" style="background:var(--ut)"></i>Utah now</span><span><i class="sw" style="background:var(--co)"></i>Colorado now</span><span>Dashed line: $90 target</span></div>
+    </div>
+    <div class="panel flat">
+      <p class="eyebrow">Reading it</p>
+      <p><b>Utah</b> pays more per click but turns far more of those clicks into leads, so cost per lead falls by over a quarter.</p>
+      <p><b>Colorado</b> costs more to reach. CPM is $51.19 against $41.35, likely because we now target the zip codes on your territory sheet, a tighter audience than the old Denver-wide ad sets.</p>
+      <p class="muted" style="font-size:15px">DealAdvisor's website campaigns counted leads with 1-day engaged view attribution as well. Ours don't, so the before figures are slightly flattering.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 4 MOMENTUM -->
+<section class="slide" id="momentum" aria-labelledby="t-mom">
+  <div class="slide-head"><span>Smart Wave Solar &middot; Meta performance review</span><span class="slide-no">Momentum &middot; 04 / 13</span></div>
+  <div style="display:grid;gap:10px">
+    <h2 id="t-mom">Cost per lead by day</h2>
+    <p class="lede">A soft weekend, then the best day so far. Four days is still inside Meta's learning phase, so weekday patterns need two more weeks to confirm.</p>
+  </div>
+  <div class="cols">
+    <div style="display:grid;gap:12px;min-width:0">
+    <div class="days" role="img" aria-label="Cost per lead by day: Friday 71.05 dollars with 13 leads, Saturday and Sunday 101.99 dollars with 14 leads, Monday 51.77 dollars with 17 leads. Target 90 dollars.">
+      <div class="day"><span class="v num">$71.05</span><div class="col-wrap"><div class="col" style="--w:59.2%"></div></div><span class="l">Fri 9 Oct<br>13 leads</span></div>
+      <div class="day"><span class="v num">$101.99</span><div class="col-wrap"><div class="col peak" style="--w:85.0%"></div></div><span class="l">Sat&ndash;Sun<br>14 leads</span></div>
+      <div class="day"><span class="v num">$51.77</span><div class="col-wrap"><div class="col best" style="--w:43.1%"></div></div><span class="l">Mon 12 Oct<br>17 leads</span></div>
+    </div>
+    <p class="bar-legend">Column height is cost per lead on a $0 to $120 scale. Dashed line: $90 target.</p>
+    </div>
+    <div class="tbl-wrap" style="align-self:start">
+      <table>
+        <thead><tr><th>Monday 12 Oct</th><th class="num">Spend</th><th class="num">Leads</th><th class="num">CPL</th></tr></thead>
+        <tbody>
+          <tr><th scope="row" class="ut">Utah</th><td class="num">$530.91</td><td class="num">9</td><td class="num">$58.99</td></tr>
+          <tr><th scope="row" class="co">Colorado</th><td class="num">$349.22</td><td class="num">8</td><td class="num">$43.65</td></tr>
+          <tr class="strong"><th scope="row">Total</th><td class="num">$880.13</td><td class="num">17</td><td class="num">$51.77</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 5 AD SETS -->
+<section class="slide" id="adsets" aria-labelledby="t-adsets">
+  <div class="slide-head"><span>Smart Wave Solar &middot; Meta performance review</span><span class="slide-no">Ad sets &middot; 05 / 13</span></div>
+  <h2 id="t-adsets">Where the leads come from</h2>
+  <div class="cols3">
+    <div class="panel">
+      <p class="eyebrow ut">Utah &middot; website</p>
+      <h3 class="num">17 leads at $58.92</h3>
+      <div class="tbl-wrap"><table><tbody>
+        <tr><th scope="row">Spend</th><td class="num">$1,001.67</td></tr>
+        <tr><th scope="row">Clicks that load the page</th><td class="num">72.6%</td></tr>
+        <tr><th scope="row">Page conversion rate</th><td class="num">11.6%</td></tr>
+        <tr><th scope="row">Frequency</th><td class="num">2.12</td></tr>
+      </tbody></table></div>
+      <p class="muted" style="font-size:15px">The strongest route. More than one in four clicks drop before the page loads, so page speed is an easy gain.</p>
+    </div>
+    <div class="panel">
+      <p class="eyebrow ut">Utah &middot; instant form</p>
+      <h3 class="num">12 leads at $84.61</h3>
+      <div class="tbl-wrap"><table><tbody>
+        <tr><th scope="row">Spend</th><td class="num">$1,015.33</td></tr>
+        <tr><th scope="row">CTR (link)</th><td class="num">0.80%</td></tr>
+        <tr><th scope="row">A3 Qualifier</th><td class="num">8 leads, $31.25</td></tr>
+        <tr><th scope="row">Videos</th><td class="num">$249.38, 0 leads</td></tr>
+      </tbody></table></div>
+      <p class="muted" style="font-size:15px">Without the videos, this ad set would be at $63.83 a lead.</p>
+    </div>
+    <div class="panel">
+      <p class="eyebrow co">Colorado &middot; website and form</p>
+      <h3 class="num">15 leads at $80.97</h3>
+      <div class="tbl-wrap"><table><tbody>
+        <tr><th scope="row">Spend</th><td class="num">$1,214.57</td></tr>
+        <tr><th scope="row">Leads from the form</th><td class="num">15 of 15</td></tr>
+        <tr><th scope="row">Clicks to the page</th><td class="num">5 of 175</td></tr>
+        <tr><th scope="row">Frequency</th><td class="num down">2.56</td></tr>
+      </tbody></table></div>
+      <p class="muted" style="font-size:15px">Meta chose the form for almost everyone, so the Colorado page is untested. Frequency is past our 2.5 refresh line.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6 CREATIVE -->
+<section class="slide" id="creative" aria-labelledby="t-creative">
+  <div class="slide-head"><span>Smart Wave Solar &middot; Meta performance review</span><span class="slide-no">Creative &middot; 06 / 13</span></div>
+  <div style="display:grid;gap:10px">
+    <h2 id="t-creative">Creative scorecard</h2>
+    <p class="lede">Both states combined, 9 to 12 October. Statics produced 39 of the 44 leads. The bar shows cost per lead against the $90 target.</p>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Creative</th><th class="num">Spend</th><th class="num">Leads</th><th class="num">CTR</th><th>Cost per lead</th><th>Note</th></tr></thead>
+      <tbody>
+<tr><th scope="row"><b>A3 Qualifier</b><small>Homeowner callout, static</small></th><td class="num">$358.61</td><td class="num">10</td><td class="num">1.62%</td><td class="cplcell"><span class="num">$35.86</span><div class="bar-track"><div class="bar" style="--w:19.9%"></div><div class="tick" style="--x:50.0%"></div></div></td><td class="note">Best cost per lead overall; $31.25 on Utah forms</td></tr>
+<tr><th scope="row"><b>A10 Local Homes</b><small>Local neighbourhood, static</small></th><td class="num">$198.65</td><td class="num">5</td><td class="num">0.63%</td><td class="cplcell"><span class="num">$39.73</span><div class="bar-track"><div class="bar" style="--w:22.1%"></div><div class="tick" style="--x:50.0%"></div></div></td><td class="note">Utah website leads at $25.76</td></tr>
+<tr><th scope="row"><b>V1 What You Get</b><small>33s video, website only</small></th><td class="num">$157.10</td><td class="num">3</td><td class="num">0.57%</td><td class="cplcell"><span class="num">$52.37</span><div class="bar-track"><div class="bar" style="--w:29.1%"></div><div class="tick" style="--x:50.0%"></div></div></td><td class="note">Video that converts on the page</td></tr>
+<tr><th scope="row"><b>A10 Local Street</b><small>Colorado street scene, static</small></th><td class="num">$400.22</td><td class="num">6</td><td class="num">0.51%</td><td class="cplcell"><span class="num">$66.70</span><div class="bar-track"><div class="bar" style="--w:37.1%"></div><div class="tick" style="--x:50.0%"></div></div></td><td class="note">Colorado volume driver, low CTR</td></tr>
+<tr><th scope="row"><b>A5 Bill Shock</b><small>Bill comparison, static</small></th><td class="num">$234.63</td><td class="num">3</td><td class="num">0.76%</td><td class="cplcell"><span class="num">$78.21</span><div class="bar-track"><div class="bar" style="--w:43.4%"></div><div class="tick" style="--x:50.0%"></div></div></td><td class="note">Steady on Utah forms ($70.63)</td></tr>
+<tr><th scope="row"><b>A4 Not a Typo</b><small>$7,995 price shock, static</small></th><td class="num">$1,165.56</td><td class="num">14</td><td class="num">0.76%</td><td class="cplcell"><span class="num">$83.25</span><div class="bar-track"><div class="bar" style="--w:46.3%"></div><div class="tick" style="--x:50.0%"></div></div></td><td class="note">36% of spend; $196.74 per lead on Utah forms</td></tr>
+<tr><th scope="row"><b>V3 Is It Total</b><small>43s video</small></th><td class="num">$232.27</td><td class="num">2</td><td class="num">0.87%</td><td class="cplcell"><span class="num">$116.14</span><div class="bar-track"><div class="bar" style="--w:64.5%"></div><div class="tick" style="--x:50.0%"></div></div></td><td class="note">Both leads came from the website</td></tr>
+<tr class="dead"><th scope="row"><b>V6 / V7 Local</b><small>22s local video</small></th><td class="num">$287.66</td><td class="num">0</td><td class="num">0.73%</td><td class="cplcell"><span class="num">No leads</span><div class="bar-track"><div class="tick" style="--x:50%"></div></div></td><td class="note">No leads from $287.66</td></tr>
+<tr class="dead"><th scope="row"><b>A0 Control</b><small>Original control image</small></th><td class="num">$176.72</td><td class="num">0</td><td class="num">0.53%</td><td class="cplcell"><span class="num">No leads</span><div class="bar-track"><div class="tick" style="--x:50%"></div></div></td><td class="note">No leads from $176.72</td></tr>
+
+      </tbody>
+    </table>
+  </div>
+  <div class="cols">
+    <div class="callout"><p class="eyebrow">Pattern</p><p><b>Ads that name the buyer win.</b> The homeowner callout and local-home imagery bring leads at under $40, less than half the cost of the price headline.</p></div>
+    <div class="callout"><p class="eyebrow">Pattern</p><p><b>Video works on the page, not the form.</b> On the website, videos bring leads at $51.72. On instant forms, the same videos spent $418.41 with no leads.</p></div>
+  </div>
+</section>
+
+<!-- 7 LEAD QUALITY -->
+<section class="slide" id="quality" aria-labelledby="t-quality">
+  <div class="slide-head"><span>Smart Wave Solar &middot; Meta performance review</span><span class="slide-no">Lead quality &middot; 07 / 13</span></div>
+  <h2 id="t-quality">The leads are the right people</h2>
+  <div class="cols">
+    <div class="panel">
+      <p class="eyebrow">Instant form leads &middot; 14 to 12 Oct</p>
+      <div class="tbl-wrap"><table><tbody>
+        <tr><th scope="row">Own a single-family home</th><td class="num">14 of 14</td></tr>
+        <tr><th scope="row">Monthly bill $100 or more</th><td class="num">12 of 14</td></tr>
+        <tr><th scope="row">Bill $200 or more</th><td class="num">7 of 14</td></tr>
+        <tr><th scope="row">Out of state (NV, WY)</th><td class="num down">2 of 14</td></tr>
+        <tr><th scope="row">Zips to confirm</th><td class="num">Salina, Alamosa, Silverthorne</td></tr>
+      </tbody></table></div>
+    </div>
+    <div class="panel">
+      <p class="eyebrow">Website leads in Jotform &middot; 9 to 11 Oct</p>
+      <div class="tbl-wrap"><table><tbody>
+        <tr><th scope="row">Genuine leads</th><td class="num">11 of 13 rows</td></tr>
+        <tr><th scope="row">Utah zip, single-family homeowner</th><td class="num">11 of 11</td></tr>
+        <tr><th scope="row">Monthly bill $100 or more</th><td class="num">9 of 11</td></tr>
+        <tr><th scope="row">Removed</th><td class="num">1 test, 1 duplicate</td></tr>
+      </tbody></table></div>
+    </div>
+  </div>
+  <div class="callout">
+    <p class="eyebrow">Against the old setup</p>
+    <p>Your earlier four-week tracking showed 28% of Meta leads were outside the service area and 10% had invalid contact details. The new pages and forms ask homeowner, home type and bill before contact details, which is why quality is holding. The typed zip question going live this week closes the last gap.</p>
+  </div>
+</section>
+
+<!-- 8 ECONOMICS -->
+<section class="slide" id="economics" aria-labelledby="t-econ">
+  <div class="slide-head"><span>Smart Wave Solar &middot; Meta performance review</span><span class="slide-no">Economics &middot; 08 / 13</span></div>
+  <div style="display:grid;gap:10px">
+    <h2 id="t-econ">What a lead is worth</h2>
+    <p class="lede">Your earlier tracking closed 9 customers from 235 Meta leads, about 1 in 26. At today's cost per lead, that works out at roughly $1,910 per customer against the $2,500 target.</p>
+  </div>
+  <div class="bars" role="img" aria-label="Cost per lead today 73.45 dollars, target 90 dollars, ceiling for 2,500 dollars per customer 96.15 dollars, breakeven 283 dollars.">
+    <div class="bar-row" style="grid-template-columns:220px 1fr 90px"><span class="lbl">Cost per lead today</span><div class="bar-track"><div class="bar" style="--w:24.5%"></div></div><span class="num"><b>$73.45</b></span></div>
+    <div class="bar-row" style="grid-template-columns:220px 1fr 90px"><span class="lbl">Target</span><div class="bar-track"><div class="bar sun" style="--w:30.0%"></div></div><span class="num">$90.00</span></div>
+    <div class="bar-row" style="grid-template-columns:220px 1fr 90px"><span class="lbl">Ceiling for $2,500 per customer</span><div class="bar-track"><div class="bar before" style="--w:32.0%"></div></div><span class="num">$96.15</span></div>
+    <div class="bar-row" style="grid-template-columns:220px 1fr 90px"><span class="lbl">Breakeven</span><div class="bar-track"><div class="bar before" style="--w:94.3%"></div></div><span class="num">$283.00</span></div>
+  </div>
+  <div class="cols">
+    <div class="panel flat"><p class="eyebrow">Room to scale</p><p>There is about $23 of headroom per lead before we hit the $2,500 customer target, and far more against the $7,500 peak breakeven. That headroom is what pays for extra volume as budgets rise.</p></div>
+    <div class="panel flat"><p class="eyebrow">The number that matters next</p><p>Cost per appointment and cost per sale. With homeowner-only leads the close rate should beat 1 in 26, and seeing outcomes per lead lets Meta find more of the people who buy.</p></div>
+  </div>
+</section>
+
+<!-- 9 THIS WEEK -->
+<section class="slide" id="week1" aria-labelledby="t-w1">
+  <div class="slide-head"><span>Smart Wave Solar &middot; Meta performance review</span><span class="slide-no">Plan&nbsp;&middot;&nbsp;this week &middot; 09 / 13</span></div>
+  <div style="display:grid;gap:10px">
+    <h2 id="t-w1">This week: put the money behind what works</h2>
+    <p class="lede">Budget stays at $800 a day while these changes settle.</p>
+  </div>
+  <div class="actions">
+    <div class="act"><span class="tag">Creative</span><div><h3>Pause A0 Control and pull videos out of the form ad sets</h3><p>$595.13 has gone on A0 and form-placed videos with no leads. Videos stay in the website ad sets, where they work.</p></div><p class="why">Frees about $150 a day for the ads that convert.</p></div>
+    <div class="act"><span class="tag">Creative</span><div><h3>Three new A3 Qualifier versions and three A4 refreshes</h3><p>Same proven hooks with new images: homeowner callout on local homes, and the $7,995 headline on fresh visuals so it stops fading.</p></div><p class="why">A3 is our cheapest lead at $35.86. A4 needs new visuals before it tires further.</p></div>
+    <div class="act"><span class="tag">Creative</span><div><h3>15-second cuts of V1 and V3 for the website</h3><p>Shorter edits of the two videos that produce website leads, opening on the price and the homeowner line.</p></div><p class="why">V3 holds 46% of viewers past 15 seconds on Utah website traffic, the best of any video.</p></div>
+    <div class="act"><span class="tag">Colorado</span><div><h3>Split Colorado into website ($150) and form ($150)</h3><p>A website-only ad set makes Meta send people to the Colorado page for 14 days, so we can judge it properly, with refreshed creative to bring frequency back under 2.5.</p></div><p class="why">Utah's best leads come from the page. Colorado's page has had 5 visits.</p></div>
+    <div class="act"><span class="tag">Proof</span><div><h3>Bring DealAdvisor's best two ads across by post ID</h3><p>"7995 | 1" brought 68 Colorado website leads at $58.72 in the last 30 days. Moving it by post ID keeps its likes and comments.</p></div><p class="why">Proven ads with social proof give the new account a strong control.</p></div>
+    <div class="act"><span class="tag">Forms</span><div><h3>Form v4 with a typed zip code</h3><p>Replace the pre-filled zip so people confirm where the property is, and track it as a new form version.</p></div><p class="why">Stops out-of-state leads like the two this week.</p></div>
+  </div>
+</section>
+
+<!-- 10 WEEKS 2-4 -->
+<section class="slide" id="weeks2" aria-labelledby="t-w2">
+  <div class="slide-head"><span>Smart Wave Solar &middot; Meta performance review</span><span class="slide-no">Plan&nbsp;&middot;&nbsp;weeks 2 to 4 &middot; 10 / 13</span></div>
+  <div style="display:grid;gap:10px">
+    <h2 id="t-w2">Weeks 2 to 4: teach Meta who buys, then scale</h2>
+    <p class="lede">Meta finds more of whatever we tell it is a win. Right now that is any lead. The next step is telling it which leads book and buy.</p>
+  </div>
+  <div class="actions">
+    <div class="act"><span class="tag">Signal</span><div><h3>Send lead outcomes back to Meta</h3><p>Update lead stages in Leads Center, or connect NetSuite through the Conversions API, so qualified, booked and sold leads flow back each week.</p></div><p class="why">Once enough outcomes arrive, form ad sets can optimise for leads that convert, not just leads.</p></div>
+    <div class="act"><span class="tag">Audiences</span><div><h3>Customer list for exclusions and as a seed</h3><p>Stop showing ads to existing customers, and give Meta's Advantage+ audience a picture of who buys from you.</p></div><p class="why">Cuts wasted impressions and points delivery at lookalike homeowners.</p></div>
+    <div class="act"><span class="tag">Retargeting</span><div><h3>Retarget page visitors, form openers and video viewers</h3><p>A small ad set for people who visited the page, opened a form without submitting, or watched half a video in the last 30 days, launched once each audience passes about 1,000 people.</p></div><p class="why">Warm audiences typically cost less per lead than cold ones.</p></div>
+    <div class="act"><span class="tag">Page</span><div><h3>Speed up the landing pages</h3><p>27% of Utah clicks drop before the page loads. Compressing images and trimming scripts on the Leadpages build should recover part of that.</p></div><p class="why">More page views from the same spend is the cheapest volume there is.</p></div>
+    <div class="act"><span class="tag">Structure</span><div><h3>Consolidate for learning, then scale budgets</h3><p>Each ad set needs about 50 leads a week to settle. At $800 a day we make about 77 a week across three ad sets. After the Colorado test, winners move into fewer, larger ad sets before budgets rise.</p></div><p class="why">Fewer ad sets with more data per ad set give steadier cost per lead at scale.</p></div>
+    <div class="act"><span class="tag">Offer</span><div><h3>Launch Version B pages for bigger systems</h3><p>The pages showing larger systems and batteries are built and waiting on your "from" prices.</p></div><p class="why">Raises the value of each lead without raising its cost.</p></div>
+  </div>
+</section>
+
+<!-- 11 CREATIVE ROADMAP -->
+<section class="slide" id="roadmap" aria-labelledby="t-road">
+  <div class="slide-head"><span>Smart Wave Solar &middot; Meta performance review</span><span class="slide-no">Creative roadmap &middot; 11 / 13</span></div>
+  <div style="display:grid;gap:10px">
+    <h2 id="t-road">Creative roadmap: four to six new ads a week</h2>
+    <p class="lede">Creative is the main lever on Meta once targeting is broad. Each week we test new ads against the current best and keep only what beats it.</p>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Angle</th><th>Why</th><th>Formats</th><th>Where</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Homeowner qualifier<small>"Own a home in Utah? Read this."</small></th><td class="note">Our best performer at $35.86 per lead</td><td>Static 4:5 and 1:1</td><td>Forms and website</td></tr>
+        <tr><th scope="row">Your street, your neighbours<small>Real local homes and installs</small></th><td class="note">A10 Local Homes at $39.73, Local Street drives Colorado volume</td><td>Static, carousel of installs</td><td>Both states</td></tr>
+        <tr><th scope="row">$7,995 all in<small>Fresh visuals on the price hook</small></th><td class="note">Strong reach, needs new images to stop fading</td><td>Static, 9:16 story</td><td>Website first</td></tr>
+        <tr><th scope="row">What you get for the price<small>System, install, no hidden fees</small></th><td class="note">V1 converts on the page at $52.37</td><td>15s and 30s video</td><td>Website only</td></tr>
+        <tr><th scope="row">Real customers<small>Short testimonials, before and after bills</small></th><td class="note">Strongest proof format in solar, needs customer consent</td><td>9:16 video, quote statics</td><td>Retargeting first</td></tr>
+        <tr><th scope="row">Bill comparison<small>Current bill vs solar</small></th><td class="note">A5 steady at $70.63 on Utah forms</td><td>Static</td><td>Forms</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 12 RULES AND TARGETS -->
+<section class="slide" id="targets" aria-labelledby="t-targets">
+  <div class="slide-head"><span>Smart Wave Solar &middot; Meta performance review</span><span class="slide-no">Rules and targets &middot; 12 / 13</span></div>
+  <h2 id="t-targets">How we scale, and what we are aiming for</h2>
+  <div class="rules">
+    <div class="rule"><span class="when">When an ad set holds 7-day CPL at or under $75 with 10+ leads</span><b>Raise its budget 20%, no more than every 72 hours</b></div>
+    <div class="rule"><span class="when">When an ad spends $180 (2&times; target) with no lead</span><b>Pause it</b></div>
+    <div class="rule"><span class="when">When frequency passes 2.5</span><b>Add new creative to that ad set</b></div>
+    <div class="rule"><span class="when">When blended 7-day CPL is at or under $75</span><b>Move from $800 to $900 a day, then step up while cost per customer stays under $2,500</b></div>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>30-day target (to 12 Nov)</th><th class="num">Now</th><th class="num">Target</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Blended cost per lead</th><td class="num">$73.45</td><td class="num">$75 or less while scaling</td></tr>
+        <tr><th scope="row">Utah cost per lead</th><td class="num">$69.55</td><td class="num">$65 or less</td></tr>
+        <tr><th scope="row">Colorado cost per lead</th><td class="num">$80.97</td><td class="num">$75 or less</td></tr>
+        <tr><th scope="row">Leads per day</th><td class="num">11.0</td><td class="num">12 or more at $900 a day</td></tr>
+        <tr><th scope="row">Out-of-area leads</th><td class="num">2 of 25</td><td class="num">Under 5% with typed zip</td></tr>
+        <tr><th scope="row">Cost per customer</th><td class="num">About $1,910 (estimate)</td><td class="num">Under $2,500, measured</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 13 ASKS -->
+<section class="slide" id="asks" aria-labelledby="t-asks">
+  <div class="slide-head"><span>Smart Wave Solar &middot; Meta performance review</span><span class="slide-no">Asks &middot; 13 / 13</span></div>
+  <h2 id="t-asks">What we need from you</h2>
+  <ul class="asks">
+    <li><span class="who">Ryan</span><b>Verify the ad account</b><span>Meta is asking for it so ads keep running without interruption.</span></li>
+    <li><span class="who">Rich</span><b>Customer list</b><span>For exclusions and as a seed audience. Names, emails, phones and zip codes.</span></li>
+    <li><span class="who">Rich</span><b>Version B prices</b><span>"From" prices for a mid-size system, a full-size system and adding a battery.</span></li>
+    <li><span class="who">Rich</span><b>Lead outcomes each week</b><span>Booked, sat and sold per lead, so we can report cost per customer and feed it back to Meta.</span></li>
+    <li><span class="who">Rich</span><b>Three zip codes</b><span>Confirm whether Salina (84654), Alamosa (81101) and Silverthorne (80498) are in your area.</span></li>
+    <li><span class="who">Rich and Ryan</span><b>Customer photos and videos</b><span>Real installs and short testimonials, with permission, for the next round of creative.</span></li>
+  </ul>
+</section>
+
+</main>
+</body>
+</html>
