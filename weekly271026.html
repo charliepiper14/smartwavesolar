@@ -164,6 +164,9 @@ a{color:inherit}
 .days.five{grid-template-columns:repeat(5,minmax(0,1fr))}
 .days .day .col-wrap::after{bottom:var(--t,75%)}
 .day .v.sm{font-size:22px}
+.stat .v{font-size:clamp(26px,2.9vw,36px);white-space:nowrap}
+.stat .d{overflow-wrap:anywhere}
+@media (max-width:520px){.stat{padding:16px}.stat .v{font-size:23px}}
 </style>
 </head>
 <body>
